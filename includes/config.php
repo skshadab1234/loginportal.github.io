@@ -1,5 +1,0 @@
-<?php 
-shadabasas
-  as
-git
-?>
