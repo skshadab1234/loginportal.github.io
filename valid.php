@@ -6,15 +6,14 @@ $pass = $_POST['pass'];
 
 $q = "select * from user where email = '$email' && password = '$pass' ";
 $result = mysqli_query($conn,$q);
-
     $num = mysqli_num_rows($result);
-    if($num == 1){
-        echo "duplicate signup";
-       }else{
-           $sql = "insert into user(email, password) values('$email', '$pass')";
-           mysqli_query($conn,$sql);
+    if($num){
+        $_SESSION['email'] = $email;
+        header("location:home.php");
+    }else{
+          
        }
 
-header("location:login.php");
+header("location:index.php")
 
 ?>
